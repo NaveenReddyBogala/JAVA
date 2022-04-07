@@ -1,2 +1,2 @@
 # JAVA
-Config files for my GitHub profile.
+java assignments

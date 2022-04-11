@@ -1,0 +1,390 @@
+import java.io.FileInputStream;
+
+ 
+
+
+class Main{
+    public static void main(String[] args) {
+        try {
+            FileInputStream input=new FileInputStream("d:\\test.txt");
+            int i =input.read();
+            while(i!=-1) {
+                System.out.print((char)i);
+                i=input.read();
+            }
+            input.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
+        }
+    }
+
+
+
+
+    
+import java.io.FileInputStream;
+
+
+
+class Main{​​​​​​
+    public static void main(String[] args) {​​​​​​
+        try {​​​​​​
+            FileInputStream input=new FileInputStream("d:\\test.txt");
+            //System.out.print(input.available());
+//            Read
+            input.read();
+            input.read();
+            input.read();
+            System.out.print(input.available());
+            input.close();
+        }​​​​​​
+        catch (Exception e) {​​​​​​
+            e.getStackTrace();
+        }​​​​​​
+        }​​​​​​
+    
+
+
+
+
+    
+import java.io.FileInputStream;
+
+
+
+class Main{​​​​​​
+    public static void main(String[] args) {​​​​​​
+        try {​​​​​​
+            FileInputStream input=new FileInputStream("d:\\test.txt");
+            //System.out.print(input.available());
+//            Read
+            input.skip(7);
+            int i=input.read();
+            while(i!=-1) {​​​​​​
+                System.out.print((char) i);
+                i=input.read();
+            }​​​​​​
+            input.close();
+        }​​​​​​
+        catch (Exception e) {​​​​​​
+            e.getStackTrace();
+        }​​​​​​
+        }​​​​​​
+    }​​​​​​
+
+
+
+
+
+
+    
+import java.io.ByteArrayInputStream;
+
+
+
+class Main{​​​​​​
+    public static void main(String[] args) {​​​​​​
+        byte[] array= {​​​​​​1,2,3,4}​​​​​​;
+        try {​​​​​​
+            ByteArrayInputStream input=new ByteArrayInputStream(array);
+            //System.out.print(input.available());
+            for(int i=0;i<array.length;i++) {​​​​​​
+                int data=input.read();
+                System.out.print(data+",");
+            }​​​​​​
+            input.close();
+        }​​​​​​
+        catch (Exception e) {​​​​​​
+            e.getStackTrace();
+        }​​​​​​
+        }​​​​​​
+    }​​​​​​
+ 
+
+
+
+
+    
+import java.io.ByteArrayInputStream;
+
+
+
+class Main{​​​​​​
+    public static void main(String[] args) {​​​​​​
+        byte[] array= {​​​​​​1,2,3,4}​​​​​​;
+        try {​​​​​​
+            ByteArrayInputStream input=new ByteArrayInputStream(array);
+            System.out.print(input.available());
+            input.read();
+            input.read();
+            System.out.print(input.available());
+//            for(int i=0;i<array.length;i++) {​​​​​​
+//                int data=input.read();
+//                System.out.print(data+",");
+//            }​​​​​​
+            input.close();
+        }​​​​​​
+        catch (Exception e) {​​​​​​
+            e.getStackTrace();
+        }​​​​​​
+        }​​​​​​
+    }​​​​​​
+
+
+
+
+
+
+
+
+import java.io.; 
+class Main{ public static void main(String[] args) 
+{
+ String data="This is the addition to the test file";
+ try 
+{
+ FileOutputStream output=new FileOutputStream("d:\\test.txt",true);
+ byte[] array=data.getBytes();
+ output.write(array); 
+output.close(); // 
+}
+ }
+ catch (Exception e) 
+{ 
+e.getStackTrace();
+ }
+ }
+ }
+ import java.io.; 
+class Main
+{
+ public static void main(String[] args)
+ {
+ String data="This is the addition to the test file"; 
+try
+ {
+ FileOutputStream output=new FileOutputStream("d:\\test.txt",true); 
+byte[] array=data.getBytes();
+ output.write(array);
+ output.close();
+ // }
+ }
+ catch (Exception e)
+ {
+ e.getStackTrace(); 
+}
+ }
+ }
+
+
+
+
+import java.io.*; 
+class Main
+{
+ public static void main(String[] args)
+ {
+ FileOutputStream output=null;
+ String data="This is the addition to the test file"; 
+try
+ {
+ // 
+FileOutputStream output=new FileOutputStream("d:\\test.txt",true); 
+output =new FileOutputStream("d:\\test.txt");
+ output.write(data.getBytes());
+ output.flush();
+ output.close();
+ //
+ }
+ }
+ catch (Exception e) 
+{
+ e.getStackTrace();
+ }
+ }
+ }
+
+
+[2:51 pm, 11/04/2022] Naveen Reddy: 
+import java.io.*; 
+class Main
+{
+ public static void main(String[] args) 
+{
+ String data="This is Byte Array addition to the test file";
+ try
+ {
+ //
+ FileOutputStream output=new FileOutputStream("d:\\test.txt",true); 
+ByteArrayOutputStream output=new ByteArrayOutputStream();
+ byte[] array=data.getBytes(); 
+output.write(array); 
+String streamData=output.toString();
+ System.out.print(streamData);
+ output.close(); 
+//
+ }
+ }
+ catch (Exception e)
+ {
+ e.getStackTrace();
+ }
+ }
+ }
+
+
+
+
+read(char[] array)
+
+import java.io.*;
+
+ 
+
+
+class Main{
+    public static void main(String[] args) {
+        String data="This is Byte Array addition to the test file";
+        char[] array=new char[100];
+        try {
+            FileReader file=new FileReader("d:\\test.txt");
+            BufferedReader input=new BufferedReader(file);
+            input.read(array);
+            System.out.println(array);
+            input.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
+        }
+    }
+
+
+
+
+
+import java.io.*;
+import java.io.InputStreamReader;
+
+ 
+
+
+class Main{
+    public static void main(String[] args) {
+        String data="This is Byte Array addition to the test file";
+        char[] array=new char[100];
+        try {
+            FileInputStream file=new FileInputStream("d:\\test.txt");
+            InputStreamReader input=new InputStreamReader(file);
+            
+            input.read(array);
+            System.out.println(array);
+            input.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
+        }
+    }
+ 
+
+
+import java.io.*;
+
+ 
+
+
+class Main{
+    public static void main(String[] args) {
+        String data="This is Byte Array addition to the test file";
+        char[] array=new char[100];
+        try {
+            StringReader input=new StringReader(data);
+            
+            input.read(array);
+            System.out.println(array);
+            input.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
+        }
+    }
+
+
+
+
+
+import java.io.*;
+
+ 
+
+
+class Main{
+    public static void main(String[] args) {
+        String data="This is BufferedWriter addition to the test file";
+        try {
+            FileWriter file=new FileWriter("d:\\test.txt");
+            BufferedWriter output=new BufferedWriter(file);
+            output.write(data);
+            output.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
+        }
+    }
+
+
+
+
+import java.io.*;
+
+ 
+
+
+class Main{
+    public static void main(String[] args) {
+        String data="This is output Stream addition to the test file";
+        try {
+            FileOutputStream file=new FileOutputStream ("d:\\test.txt");
+            OutputStreamWriter output=new OutputStreamWriter(file);
+            output.write(data);
+            output.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
+        }
+    }
+
+
+
+import java.io.*;
+
+ 
+
+
+class Main{
+    public static void main(String[] args) {
+        String data="This is output String Writer to the test file";
+        try {
+            StringWriter output=new StringWriter();
+            output.write(data);
+            System.out.println(output);
+            output.close();
+        }
+        catch (Exception e) {
+            e.getStackTrace();
+        }
+        }
+    }
+
+
+
+
+
+
+

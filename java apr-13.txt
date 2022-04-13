@@ -1,0 +1,159 @@
+
+
+package JUnitPackage; 
+import org.junit.;
+import static org.junit.Assert.;
+public class JUnitExample 
+{
+ @Before public void setUp() 
+{
+ System.out.println("setUp() method runs before each testcase");
+ }
+ @Test public void test_JUnit1()
+ {
+ System.out.println("This is the 1st testcase");
+ }
+ @Test public void test_JUnit2() 
+{
+ System.out.println("This is the 2nd testcase");
+ }
+ @Test public void test_JUnit3()
+ {
+ System.out.println("This is the 3rd testcase");
+ }
+ @After public void tearDown() 
+{
+ System.out.println("This is method runs after every testcase"); 
+}
+ }
+
+
+
+
+
+
+
+package JUnitPackage;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+ 
+
+public class JUnitExample {
+    @BeforeClass
+    public static void preClass() {
+        System.out.println("This is the preClass() test method");
+    }
+    @Before
+    public void setUp() {
+        System.out.println("setUp() method runs before each testcase");
+    }
+    @Test
+    public void test_JUnit1() {
+        System.out.println("This is the 1st testcase");
+    }
+    @Test
+    public void test_JUnit2() {
+        System.out.println("This is the 2nd testcase");
+    }
+    @Test
+    public void test_JUnit3() {
+        System.out.println("This is the 3rd testcase");
+    }
+    @After
+    public void tearDown() {
+        System.out.println("This is method runs after every testcase");
+    }
+    @AfterClass
+    public static void postClass() {
+        System.out.println("This is the postClass() test method");
+    }
+
+ 
+
+}
+ 
+
+
+
+package JUnitPackage;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+ 
+
+public class JUnitExample {
+    @Test(timeout=3000)
+    public void testTimeOut() {
+        System.out.println("Testing the TimeOut option");
+        while(1==1) {}
+    }
+}
+
+
+
+package JUnitPackage;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+ 
+
+public class JUnitExample {
+    @Ignore("Still thinking")
+    @Test
+    public void testIgn() {
+        System.out.println("Ignoring the test");
+        fail("not runnning due to the @Ignore annotation");
+    }
+}
+
+
+
+
+package JUnitPackage;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+ 
+
+public class JUnitExample {
+    @Test(expected=IllegalArgumentException.class)
+    public void testExc(int num) {
+        System.out.println("Exception will be checked");
+    }
+}
+
+
+
+
+
+package JUnitPackage;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+ 
+
+public class JUnitExample {
+    @Test
+    public void testNullAndNotNull() {
+        Object car=null;
+        assertNotNull("Car should be null",car);
+    }
+}
+
+
+
+
+
+package JUnitPackage; 
+import org.junit.;
+ import static org.junit.Assert.;
+ public class JUnitExample 
+{
+ @Test public void testSameNotSame() 
+{
+ Object car1=new Object(); 
+Object car2=new Object();
+ assertNotSame(car1,car2);
+ }
+ }

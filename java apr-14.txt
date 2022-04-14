@@ -1,0 +1,166 @@
+APRIL-14-2022
+------------------
+
+
+1 – Student Marks
+Create a Class StudentMarks with a main method. Use Scanner to accept marks scored by Students.
+
+
+Add the marks to an ArrayList. (two or more students can have the same marks)
+Display the highest mark scored by the student.
+Display the Average marks scored by the Students
+Display the marks stored by the 3rd Student
+Sort the marks and display the marks using Iterator.
+
+
+Sample Input
+Enter number of Students
+4
+Enter Marks
+40 60 60 50 
+
+
+Sample Output
+Highest Marks : 60
+Average Marks : 52.5
+Marks     : 1-40 2-60 3-60 4-50
+3rd Student marks : 60
+Sorted     : 1-40 2-50 3-60 4-60
+ 
+
+
+
+
+
+package capgemini;
+import java.util.Scanner;
+
+public class StudentMarks {
+
+	public static void main(String[] args) {
+ 		// TODO Auto-generated method stub
+       Scanner sc=new Scanner(System.in);
+       int i,n,j,max,temp;
+       double Avg=0;
+       System.out.println("enter number of students");
+       n=sc.nextInt();
+       System.out.println("enter student marks");
+       int Marks[]=new int[n];
+       for(i=0;i<n;i++)
+       {
+    	   Marks[i]=sc.nextInt();
+       }
+       max=Marks[0];
+       for(i=1;i<n;i++)
+       {
+     	  if(max<Marks[i])
+     	  {
+     		  max=Marks[i];
+     	  }
+       }
+       System.out.println("Highest Marks: "+max);
+       
+       for(i=0;i<n;i++)
+       {
+    	   Avg=Avg+Marks[i];
+       }
+       
+      System.out.println("Average marks scored by the Students: "+(Avg/n));
+      System.out.print("Marks: ");
+      for(i=0,j=1;i<n;i++,j++) 
+      {
+    	  
+      System.out.print(+j+"-"+Marks[i]+" ");
+      
+      }
+      System.out.println();
+     
+      System.out.println("3rd student marks: "+Marks[2]);
+      for(i=0;i<n;i++)
+      {
+    	  for(j=i+1;j<n;j++)
+    	  {
+    		  if(Marks[i]>Marks[j])
+    		  {
+    		 temp=Marks[i];
+    		 Marks[i]=Marks[j];
+    		 Marks[j]=temp;
+    		  }
+    	  }
+      }
+      System.out.print("Sorted: ");
+    	  
+      for(i=0,j=1;i<n;i++,j++) 
+      {
+    	  
+      System.out.print(+j+"-"+Marks[i]+" ");
+      
+      }
+      System.out.println();
+      
+      
+	}
+
+}
+
+
+
+output:
+-----------
+enter number of students
+4
+enter student marks
+30 40 20 50
+Highest Marks: 50
+Average marks scored by the Students: 35.0
+Marks: 1-30 2-40 3-20 4-50 
+3rd student marks: 20
+Sorted: 1-20 2-30 3-40 4-50 
+
+
+
+
+
+
+
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+public class JDBCDemoOne {
+    private static final String DB_URL="jdbc:mysql://localhost:3306/student_mng";
+    private static final String USER_ID="root";
+    private static final String PASSWORD="root";
+    public static void main(String[] args) {
+        final String sql="select * from students";
+        Connection conn=null;
+        try {
+//            Register the Driver
+            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Establishing the Connection
+            conn=DriverManager.getConnection(DB_URL,USER_ID,PASSWORD);
+//            Create Statement
+            Statement statement=conn.createStatement();
+//            Execute Query
+            ResultSet result=statement.executeQuery(sql);
+//            Processing the results
+            while(result.next()) {
+                String name=result.getString("sname");
+                String phone=result.getString("sphone");
+                System.out.println(name +" "+phone);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+ 
+
+
+    }
+
+ 
+
+}
+ 

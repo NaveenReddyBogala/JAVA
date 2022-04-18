@@ -1,0 +1,291 @@
+APRIL-18
+-------------------
+
+
+
+ScoreCard
+Create a class ScoreCard with a main method to analyze the runs scored by batsmen of a team. The input data format is given below. The program needs to output as given below. Use a concrete class of Map to achieve the functionality.
+
+
+Sample Input
+-------------
+Enter Runs Scored
+Rahane-20 Rahul-30 Kohli-150 Dhoni-50 Lokesh-2
+
+
+
+Sample Output
+-------------
+Players who batted
+Dhoni
+Kohli
+Lokesh
+Rahane
+Rahul
+
+
+Scores by Players
+Dhoni : 50
+Kohli : 150
+Lokesh : 2
+Rahane : 20
+Rahul  : 30
+
+
+Total Score : 202
+
+
+Name of Highest Scorer : Kohli
+
+
+Runs Scored by Dhoni : 50
+
+
+
+
+package capgemini;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class ScoreCard {
+public static void main(String[] args) {
+	
+	List<Score> players=new ArrayList<>();
+	players.add(new Score("Dhoni",50));
+	players.add(new Score("Rahul",30));
+	players.add(new Score("Lokesh",60));
+	players.add(new Score("Rahane",40));
+	players.add(new Score("Kohli",80));
+    Collections.sort(players,Comparator.comparing(Score::getname));
+	System.out.println(players);
+}
+}
+class Score
+{
+	String name;
+	int score;
+	Score(String name,int score)
+	{
+		this.name=name;
+		this.score=score;
+		String b=batted();
+		System.out.println(b);
+	}
+	public String toString()
+    {
+        return batted();  
+                        
+    }
+	String batted()
+	{
+		return this.name+"-"+this.score;
+	}
+	
+	public int getScore() {
+		return score;
+	}
+	public void setScore(int score) {
+		this.score=score;
+	}
+	public String getname() {
+		return name;
+	}
+	public void setname(String name) {
+		this.name=name;
+	}
+}
+
+
+
+
+
+
+
+
+
+    
+package tdmo;
+class MyThread extends Thread{​​​​​​
+    public void run() {​​​​​​
+        for(int i=1;i<=10;i++) {​​​​​​
+            System.out.println(i);
+        }​​​​​​
+    
+    }​​​​​​
+}​​​​​​
+public class ThreadDemo {​​​​​​
+
+
+    public static void main(String[] args) {​​​​​​
+        // TODO Auto-generated method stub
+        MyThread th1=new MyThread();
+        MyThread th2=new MyThread();
+        th1.start();
+        th2.start();
+    }​​​​​​
+
+
+}​​​​​​
+ 
+
+
+
+
+​[14:29] Babu (Guest)
+    
+package tdmo;
+class MyThread extends Thread{​​​​​​
+    public void run() {​​​​​​
+        for(int i=1;i<=10;i++) {​​​​​​
+            System.out.println(i);
+        }​​​​​​
+    
+    }​​​​​​
+}​​​​​​
+public class ThreadDemo {​​​​​​
+
+
+    public static void main(String[] args) {​​​​​​
+        // TODO Auto-generated method stub
+        MyThread th1=new MyThread();
+        MyThread th2=new MyThread();
+        th1.start();
+        th2.start();
+    }​​​​​​
+
+
+}​​​​​​
+ 
+
+
+
+
+    
+package tdmo;
+class MyThread extends Thread{​​​​​​
+    public void run() {​​​​​​
+        for(int i=1;i<=5;i++) {​​​​​​
+            System.out.println(i);
+            try {​​​​​​
+                Thread.sleep(500);
+            }​​​​​​
+            catch (Exception e) {​​​​​​
+                e.printStackTrace();
+            }​​​​​​
+        }​​​​​​
+    
+    }​​​​​​
+}​​​​​​
+public class ThreadDemo {​​​​​​
+
+
+    public static void main(String[] args) {​​​​​​
+        // TODO Auto-generated method stub
+        MyThread th1=new MyThread();
+        th1.start();
+        for(int i=1;i<=5;i++) {​​​​​​
+            System.out.println(i);
+        }​​​​​​
+        try {​​​​​​
+            Thread.sleep(500);
+        }​​​​​​
+        catch (Exception e) {​​​​​​
+            e.printStackTrace();
+        }​​​​​​
+    }​​​​​​
+
+
+}​​​​​​
+
+
+
+
+
+    
+package tdmo;
+class MyThread extends Thread{​​​​​​
+    public void run() {​​​​​​
+        Thread th=Thread.currentThread();
+        String name=th.getName();
+        for(int i=1;i<=5;i++) {​​​​​​
+            System.out.println(i + " "+name);
+            try {​​​​​​
+                Thread.sleep(500);
+            }​​​​​​
+            catch (Exception e) {​​​​​​
+                e.printStackTrace();
+            }​​​​​​
+        }​​​​​​
+    
+    }​​​​​​
+}​​​​​​
+public class ThreadDemo {​​​​​​
+
+
+    public static void main(String[] args) {​​​​​​
+        // TODO Auto-generated method stub
+        MyThread th1=new MyThread();
+        th1.start();
+        Thread th=Thread.currentThread();
+        String name=th.getName();
+        for(int i=1;i<=5;i++) {​​​​​​
+            System.out.println(i+" "+name);
+            try {​​​​​​
+                Thread.sleep(500);
+            }​​​​​​
+            catch (Exception e) {​​​​​​
+                e.printStackTrace();
+            }​​​​​​
+        }​​​​​​
+    
+    }​​​​​​
+
+
+}​​​​​​
+
+
+
+
+package tdmo;
+class MyThread extends Thread{
+    public void run() {
+        Thread th=Thread.currentThread();
+        String name=th.getName();
+        for(int i=1;i<=5;i++) {
+            System.out.println(i + " "+name);
+        }
+    
+    }
+}
+public class ThreadDemo {
+
+ 
+
+    public static void main(String[] args) throws InterruptedException {
+        // TODO Auto-generated method stub
+        MyThread th1=new MyThread();
+        th1.start();
+        th1.join();
+        Thread th=Thread.currentThread();
+        String name=th.getName();
+        for(int i=1;i<=5;i++) {
+            System.out.println(i+" "+name);
+            try {
+                Thread.sleep(500);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    
+    }
+
+ 
+
+}
+
+
+
